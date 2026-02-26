@@ -1,3 +1,8 @@
+DBMS CIA 3
+TEAM:
+Florentina Francis 2462070
+Sandra Shaju 2462143
+Rebecca Lenin Koshy 2462134
 # Cuddlecot - Kids Clothing E-Commerce Platform
 
 A professional full-stack e-commerce application for kids' clothing built with Angular, Node.js, Express, and MySQL.
