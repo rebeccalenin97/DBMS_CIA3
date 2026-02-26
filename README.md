@@ -1,8 +1,8 @@
-# 🧸 Cuddlecot - Kids Clothing E-Commerce Platform
+# Cuddlecot - Kids Clothing E-Commerce Platform
 
 A professional full-stack e-commerce application for kids' clothing built with Angular, Node.js, Express, and MySQL.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js v18+
@@ -29,7 +29,7 @@ ng serve
 - URL: http://localhost:4200
 - Login: rahul@example.com / password123
 
-## ✨ Features
+##  Features
 
 ### Frontend
 Angular Material UI with modern purple gradient theme
