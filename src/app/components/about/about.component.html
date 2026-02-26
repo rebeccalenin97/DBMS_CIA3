@@ -1,0 +1,81 @@
+<div class="about-page">
+
+  <div class="about-header fade-in-up">
+    <mat-icon class="header-icon">favorite</mat-icon>
+    <h1>About Cuddlecot</h1>
+    <p class="subtitle">Your trusted partner in kids' fashion</p>
+  </div>
+
+  <div class="about-content">
+    
+    <mat-card class="about-intro fade-in-up stagger-1">
+      <mat-card-content>
+        <h2>Our Story</h2>
+        <p>
+          <strong>Cuddlecot</strong> is a modern e-commerce platform dedicated to providing the best quality,
+          comfortable, and stylish clothing for children. We believe every child deserves to look and feel amazing
+          while being comfortable in what they wear.
+        </p>
+        <p>
+          Our mission is to bring comfort, quality, and affordability together in one place, making shopping
+          for kids' clothing a delightful experience for parents everywhere.
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+    <div class="features-grid">
+      <mat-card class="feature-item fade-in-up" *ngFor="let feature of features; let i = index" [style.animation-delay]="(i * 0.1 + 0.2) + 's'">
+        <mat-icon class="feature-icon">{{ feature.icon }}</mat-icon>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.desc }}</p>
+      </mat-card>
+    </div>
+
+    <mat-card class="about-collections fade-in-up stagger-3">
+      <mat-card-header>
+        <mat-card-title>Our Collections</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="collections-list">
+          <div class="collection-item">
+            <mat-icon>checkroom</mat-icon>
+            <span>Trendy Fashion Wear</span>
+          </div>
+          <div class="collection-item">
+            <mat-icon>toys</mat-icon>
+            <span>Soft Lifestyle Products</span>
+          </div>
+          <div class="collection-item">
+            <mat-icon>weekend</mat-icon>
+            <span>Cozy Home Essentials</span>
+          </div>
+          <div class="collection-item">
+            <mat-icon>card_giftcard</mat-icon>
+            <span>Cute Gift Items</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="about-tech fade-in-up stagger-4">
+      <mat-card-content>
+        <h2>Technology Stack</h2>
+        <p>
+          This application is built using modern web technologies including Angular for the frontend,
+          Node.js with Express for the backend API, and MySQL for reliable data storage. The system
+          ensures proper user management, product catalog, cart functionality, and secure order tracking.
+        </p>
+        <div class="tech-badges">
+          <span class="badge">Angular 18</span>
+          <span class="badge">Angular Material</span>
+          <span class="badge">Node.js</span>
+          <span class="badge">Express</span>
+          <span class="badge">MySQL</span>
+          <span class="badge">TypeScript</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+</div>

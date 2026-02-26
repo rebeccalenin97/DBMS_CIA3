@@ -1,0 +1,98 @@
+<div class="products-page">
+  
+  <!-- Filter Section -->
+  <mat-card class="filter-card fade-in-up">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon class="title-icon">filter_list</mat-icon>
+        <span>Filter Products</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="filters">
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Category</mat-label>
+          <mat-select [(ngModel)]="selectedCategory">
+            <mat-option value="">All Categories</mat-option>
+            <mat-option value="Girls">Girls</mat-option>
+            <mat-option value="Boys">Boys</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Age</mat-label>
+          <mat-select [(ngModel)]="selectedAge">
+            <mat-option [value]="null">All Ages</mat-option>
+            <mat-option [value]="2">2 Years</mat-option>
+            <mat-option [value]="3">3 Years</mat-option>
+            <mat-option [value]="4">4 Years</mat-option>
+            <mat-option [value]="5">5 Years</mat-option>
+            <mat-option [value]="6">6 Years</mat-option>
+            <mat-option [value]="7">7 Years</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Min Price</mat-label>
+          <input matInput type="number" placeholder="₹0" [(ngModel)]="minPrice">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Max Price</mat-label>
+          <input matInput type="number" placeholder="₹5000" [(ngModel)]="maxPrice">
+        </mat-form-field>
+
+        <button mat-raised-button color="warn" (click)="clearFilters()">
+          Clear Filters
+        </button>
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Loading Spinner -->
+  <div class="loading-container" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+    <p>Loading products...</p>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="products-grid" *ngIf="!loading">
+    
+    <mat-card class="product-card fade-in-up" *ngFor="let product of filteredProducts; let i = index" [style.animation-delay]="(i * 0.1) + 's'">
+      <img mat-card-image [src]="product.image" [alt]="product.name">
+      
+      <mat-card-header>
+        <mat-card-title>{{ product.name }}</mat-card-title>
+        <mat-card-subtitle>
+          <mat-chip-set>
+            <mat-chip class="category-chip">{{ product.category }}</mat-chip>
+            <mat-chip class="age-chip">Age {{ product.age }}</mat-chip>
+          </mat-chip-set>
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p class="description">{{ product.description }}</p>
+        <p class="price">₹{{ product.price }}</p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button class="add-to-cart-btn" (click)="addToCart(product)">
+          <mat-icon>shopping_cart</mat-icon>
+          <span>Add to Cart</span>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+    <div class="no-products" *ngIf="filteredProducts.length === 0">
+      <h3>No products found matching your filters</h3>
+      <button mat-raised-button color="primary" (click)="clearFilters()">
+        Clear Filters
+      </button>
+    </div>
+
+  </div>
+
+</div>
